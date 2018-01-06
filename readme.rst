@@ -9,8 +9,6 @@ Yet Another Sparkline (yasl)
 	:target: https://github.com/MomsFriendlyRobotCompany/yasl
 .. image:: https://img.shields.io/pypi/v/yasl.svg
 	:target: https://github.com/MomsFriendlyRobotCompany/yasl
-.. image:: https://travis-ci.org/MomsFriendlyRobotCompany/yasl.svg?branch=master
-    :target: https://travis-ci.org/MomsFriendlyRobotCompany/yasl
 
 Why? Well, it is actually really easy to do this and I wanted some different
 controls that the other programs didn't have. Also, I like the MIT license.
@@ -20,15 +18,15 @@ Usage
 
 You can run it from the command line::
 
-  kevin@dalek psl $ ./sparkbar.py  1 2 3E+0 4
+  kevin@dalek psl $ sparkbar.py  1 2 3E+0 4
    ▂▅█
-  kevin@dalek psl $ ./sparkbar.py -z 1 2 3E+0 4
+  kevin@dalek psl $ sparkbar.py -z 1 2 3E+0 4
    ▎▋█
-  kevin@dalek psl $ ./sparkbar.py 1 2 3 4 3 2 1 0 3 5
+  kevin@dalek psl $ sparkbar.py 1 2 3 4 3 2 1 0 3 5
   ▁▃▄▆▄▃▁ ▄█
 
 
-Or call it from a python program:
+Or call it from a python program, this will work with python 2.7 and python 3:
 
 .. code-block:: python
 
