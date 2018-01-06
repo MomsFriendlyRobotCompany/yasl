@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
 from __future__ import print_function, division
-import spark
+import yasl
 import argparse
 
 parser = argparse.ArgumentParser(
-    description=spark.__doc__.encode('utf-8'),
+    description=yasl.__doc__.encode('utf-8'),
     # formatter_class=argparse.RawDescriptionHelpFormatter
     )
 parser.add_argument("data",nargs=argparse.REMAINDER,help="Input data to plot")
@@ -15,10 +15,10 @@ parser.add_argument("--version", "-v", action="store_true", help="Prints version
 args = parser.parse_args()
 
 if args.version:
-    print(spark.__version__)
+    print(yasl.__version__)
     exit(0)
 
-sp = spark.Spark()
+sp = yasl.Spark()
 
 try:
     for i, d in enumerate(args.data):

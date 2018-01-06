@@ -38,5 +38,8 @@ setup(
 	cmdclass={
 		'make': BuildCommand,
 		'publish': PublishCommand
-	}
+	},
+	scripts=[
+		'sparkbar.py'
+	]
 )
