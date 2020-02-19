@@ -8,14 +8,20 @@ def test_vbar():
 
     print(u'max: {:.2f} min: {:.2f} [{}]'.format(max(data),min(data),sp.vbar(data)))
 
+    assert True
+
 def test_hbar():
     sp = Spark()
     data = []
     for i in range(36):
         data.append((sin(4*pi*i/36)))
-        
+
     print(u'max: {:.2f} min: {:.2f} [{}]'.format(max(data),min(data),sp.hbar(data)))
+
+    assert True
 
 def test_unicode():
     sp = Spark()
     sp.dump()
+
+    assert True

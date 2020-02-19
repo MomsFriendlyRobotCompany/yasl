@@ -1,38 +1,32 @@
-Yet Another Sparkline (yasl)
-==============================
+# Yet Another Sparkline (yasl)
 
-.. image:: https://img.shields.io/pypi/l/yasl.svg
-	:target: https://github.com/MomsFriendlyRobotCompany/yasl
-.. image:: https://img.shields.io/pypi/pyversions/yasl.svg
-	:target: https://github.com/MomsFriendlyRobotCompany/yasl
-.. image:: https://img.shields.io/pypi/wheel/yasl.svg
-	:target: https://github.com/MomsFriendlyRobotCompany/yasl
-.. image:: https://img.shields.io/pypi/v/yasl.svg
-	:target: https://github.com/MomsFriendlyRobotCompany/yasl
+[![Actions Status](https://github.com/MomsFriendlyRobotCompany/yasl/workflows/CheckPackage/badge.svg)](https://github.com/MomsFriendlyRobotCompany/yasl/actions)
+![GitHub](https://img.shields.io/github/license/MomsFriendlyRobotCompany/yasl)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/yasl)
+![PyPI](https://img.shields.io/pypi/v/yasl)
+
 
 Why? Well, it is actually really easy to do this and I wanted some different
 controls that the other programs didn't have. Also, I like the MIT license.
 
-Usage
--------
+## Usage
 
-You can run it from the command line::
+You can run it from the command line:
 
+```bash
   kevin@dalek psl $ sparkbar.py  1 2 3E+0 4
    ▂▅█
   kevin@dalek psl $ sparkbar.py -z 1 2 3E+0 4
    ▎▋█
   kevin@dalek psl $ sparkbar.py 1 2 3 4 3 2 1 0 3 5
   ▁▃▄▆▄▃▁ ▄█
+```
 
+Or call it from a python program:
 
-Or call it from a python program, this will work with python 2.7 and python 3:
-
-.. code-block:: python
-
+```python
   #!/usr/bin/env python
 
-  from __future__ import print_function, division
   from math import sin, pi
   from yasl import Spark
 
@@ -49,16 +43,15 @@ Or call it from a python program, this will work with python 2.7 and python 3:
       print(u'max: {:.2f} min: {:.2f} [{}]'.format(max(data),min(data),sp.hbar(data)))
 
       sp.dump()
+```
 
-::
-
+```bash
   kevin@dalek psl $ python3 example.py
   max: 8.50 min: -8.00 [▃▅▆█▇▆▄▇ ▄]
   max: 0.98 min: -0.98 [▌▋▊▉██▉▊▋▌▎▏    ▏▎▍▋▊▉▉█▉▊▋▌▎▏    ▏▎]
+```
 
-
-MIT License
-===============
+# MIT License
 
 **Copyright (c) 2017 Kevin J. Walchko**
 

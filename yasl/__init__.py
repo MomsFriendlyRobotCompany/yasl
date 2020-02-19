@@ -1,6 +1,12 @@
+
+try:
+    from importlib_metadata import version # type: ignore
+except ImportError:
+    from importlib.metadata import version # type: ignore
+
 from .spark import Spark
 
-__version__ = '1.0.1'
+__version__ = version("yasl")
 __license__ = 'MIT'
 __author__ = 'Kevin Walchko'
 __doc__ = u"""

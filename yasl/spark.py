@@ -1,4 +1,3 @@
-from __future__ import print_function, division
 import sys
 
 # in py3, unichr doesn't exist, so we will just alias it to chr
