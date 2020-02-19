@@ -1,35 +1,39 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-from __future__ import print_function, division
 import yasl
 import argparse
 
-parser = argparse.ArgumentParser(
-    description=yasl.__doc__.encode('utf-8'),
-    # formatter_class=argparse.RawDescriptionHelpFormatter
-    )
-parser.add_argument("data",nargs=argparse.REMAINDER,help="Input data to plot")
-parser.add_argument("--horizontal", "-r", action="store_true", help="Draw horizontal bars")
-parser.add_argument("--version", "-v", action="store_true", help="Prints version number and exits")
+def main():
 
-args = parser.parse_args()
+    desc = """
+    Draw bar graphs from input data. By default, it draws a vertical bar
+    chart, but you can also draw a horizontal bar chart if you want.
+    """
 
-if args.version:
-    print(yasl.__version__)
-    exit(0)
+    parser = argparse.ArgumentParser(
+        description=desc,
+        # formatter_class=argparse.RawDescriptionHelpFormatter
+        )
+    parser.add_argument("data",nargs=argparse.REMAINDER,help="Input data to plot")
+    parser.add_argument("--horizontal", "-z", action="store_true", help="Draw horizontal bars")
+    parser.add_argument("--version", "-v", action="store_true", help="Prints version number and exits")
 
-sp = yasl.Spark()
+    args = parser.parse_args()
 
-try:
-    for i, d in enumerate(args.data):
-        args.data[i] = float(d)
-except Exception as e:
-    print('ERROR on input data:', e)
-    exit(1)
+    if args.version:
+        print(yasl.__version__)
+        exit(0)
 
-# print(args.data)
+    sp = yasl.Spark()
 
-if args.horizontal:
-    print(sp.hbar(args.data))
-else:
-    print(sp.vbar(args.data))
+    try:
+        for i, d in enumerate(args.data):
+            args.data[i] = float(d)
+    except Exception as e:
+        print(f'ERROR on input data: {e}')
+        exit(1)
+
+    if args.horizontal:
+        print(sp.hbar(args.data))
+    else:
+        print(sp.vbar(args.data))
